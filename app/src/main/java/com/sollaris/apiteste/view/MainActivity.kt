@@ -1,4 +1,4 @@
-package com.sollaris.apiteste
+package com.sollaris.apiteste.view
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,15 +9,26 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.lifecycle.ViewModelProvider
+import com.sollaris.apiteste.R
 import com.sollaris.apiteste.databinding.ActivityMainBinding
+import com.sollaris.apiteste.viewmodel.MainViewModel
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        doLogin()
+
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -32,7 +43,27 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+
     }
+
+    private fun doLogin() {
+        val type = "password"
+        val email = "samuelottoni13@gmail.com"
+        val password = "samuel@13"
+
+        mViewModel.doLogin(type, email, password)
+
+    }
+
+
+
+
+
+
+
+
+    //Mandar para o ModelView?
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -55,4 +86,5 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
 }

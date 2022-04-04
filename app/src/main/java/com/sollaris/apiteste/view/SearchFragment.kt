@@ -1,4 +1,4 @@
-package com.sollaris.apiteste
+package com.sollaris.apiteste.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
