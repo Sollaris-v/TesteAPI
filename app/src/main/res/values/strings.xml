@@ -32,5 +32,8 @@
     <string name="user_search">Pesquisar </string>
     <string name="register_user">Cadastrar Usuário </string>
     <string name="about_app">Sobre o APP </string>
+
+
+    <string name="ERROR_UNEXPECTED">Um erro inesperado aconteceu.</string>
     
 </resources>

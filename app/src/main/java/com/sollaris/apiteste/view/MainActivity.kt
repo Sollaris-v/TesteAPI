@@ -9,6 +9,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sollaris.apiteste.R
 import com.sollaris.apiteste.databinding.ActivityMainBinding
@@ -27,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         doLogin()
+        observe()
 
 
 
@@ -47,6 +52,26 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun observe(){
+        mViewModel.login.observe(this, Observer {
+
+            var menssage = ""
+
+            if (it.success()) {
+                menssage = "Logado com sucesso!"
+                Toast.makeText(applicationContext, menssage, Toast.LENGTH_SHORT).show()
+//                showBasicDialog(null, menssage)
+            } else {
+                menssage = it.failure()
+                Toast.makeText(applicationContext, menssage, Toast.LENGTH_SHORT).show()
+//                showBasicDialog(null, menssage)
+            }
+        })
+    }
+
+
+
+
     private fun doLogin() {
         val type = "password"
         val email = "samuelottoni13@gmail.com"
@@ -54,6 +79,13 @@ class MainActivity : AppCompatActivity() {
 
         mViewModel.doLogin(type, email, password)
 
+    }
+
+    fun showBasicDialog(view: View?, menssage: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Login")
+        builder.setMessage(menssage)
+        builder.show()
     }
 
 
