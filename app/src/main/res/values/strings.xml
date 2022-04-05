@@ -35,5 +35,8 @@
 
 
     <string name="ERROR_UNEXPECTED">Um erro inesperado aconteceu.</string>
+    <string name="login_successful">Logado com sucesso!</string>
+    <string name="login_problem">Problema ao logar.</string>
+
     
 </resources>
