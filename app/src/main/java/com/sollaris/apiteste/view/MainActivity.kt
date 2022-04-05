@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         observe()
 
 
+        
+        //  CRIADO AUTOMATICAMENTE AO GERAR O PROJETO
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -55,17 +57,16 @@ class MainActivity : AppCompatActivity() {
     private fun observe(){
         mViewModel.login.observe(this, Observer {
 
-            var menssage = ""
+            var menssage = getString(R.string.login_problem)
 
             if (it.success()) {
-                menssage = "Logado com sucesso!"
-                Toast.makeText(applicationContext, menssage, Toast.LENGTH_SHORT).show()
+                menssage = get.String(R.string.login_successful)
 //                showBasicDialog(null, menssage)
             } else {
                 menssage = it.failure()
-                Toast.makeText(applicationContext, menssage, Toast.LENGTH_SHORT).show()
 //                showBasicDialog(null, menssage)
             }
+             Toast.makeText(applicationContext, menssage, Toast.LENGTH_SHORT).show()
         })
     }
 
@@ -81,21 +82,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun showBasicDialog(view: View?, menssage: String) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Login")
-        builder.setMessage(menssage)
-        builder.show()
-    }
+//    fun showBasicDialog(view: View?, menssage: String) {
+//        val builder = AlertDialog.Builder(this)
+//        builder.setTitle("Login")
+//        builder.setMessage(menssage)
+//        builder.show()
+//    }
 
 
 
 
 
 
+//  CRIADO AUTOMATICAMENTE AO GERAR O PROJETO
 
-
-    //Mandar para o ModelView?
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
