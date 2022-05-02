@@ -4,15 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.UsersFragment">
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".UserFragment"
+        tools:context=".view.UserActivity"
         android:padding="18dp">
 
 
@@ -20,7 +19,7 @@
         <TextView
             android:id="@+id/title_new_user"
             android:layout_width="0dp"
-            android:text="Editar/excluir usuário"
+            android:text="@string/action_new_user"
             android:textAlignment="center"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -31,6 +30,7 @@
             android:id="@+id/user_full_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/user_full_name"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_new_user"
@@ -40,6 +40,7 @@
             android:id="@+id/user_display_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/user_display_name"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_full_name"
@@ -49,6 +50,7 @@
             android:id="@+id/user_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/user_email"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_display_name"
@@ -58,6 +60,7 @@
             android:id="@+id/user_home_phone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/user_cell_phone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_email"
@@ -67,6 +70,7 @@
             android:id="@+id/user_commercial_phone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/user_comm_phone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_home_phone"
@@ -76,6 +80,8 @@
             android:id="@+id/user_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/user_password"
+            android:inputType="textPassword"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_commercial_phone"
@@ -88,12 +94,13 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_password"
+            android:entries="@array/user_occupations"
             android:padding="20dp"
             android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/active_text"
-            android:text="Usuário ativo: "
+            android:text="@string/user_status"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -104,6 +111,7 @@
             android:id="@+id/user_active"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:checked="true"
             app:layout_constraintLeft_toRightOf="@+id/active_text"
             app:layout_constraintTop_toBottomOf="@id/user_occupation"
             app:layout_constraintRight_toRightOf="parent" />
@@ -111,23 +119,23 @@
 
         <Button
             android:id="@+id/save_user"
-            android:layout_width="wrap_content"
-            android:text="SALVAR"
+            android:layout_width="0dp"
+            android:text="@string/user_save"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/delete_user"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/active_text"
             android:layout_marginTop="50dp"/>
 
         <Button
             android:id="@+id/delete_user"
-            android:layout_width="wrap_content"
-            android:text="APAGAR"
+            android:layout_width="0dp"
+            android:text="@string/user_delete"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@+id/save_user"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/active_text"
-            android:layout_marginTop="50dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/save_user"
+            android:layout_marginTop="10dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

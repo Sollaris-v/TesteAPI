@@ -1,5 +1,6 @@
 package com.sollaris.apiteste.view
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -30,12 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         mViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        doLogin()
-        observe()
-
-
         
-        //  CRIADO AUTOMATICAMENTE AO GERAR O PROJETO
+        // -------CRIADO AUTOMATICAMENTE AO GERAR O PROJETO-------------
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,33 +44,39 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            startActivity(Intent(this, UserActivity::class.java))
         }
+        // ----------------------------------------------------------------
+
+
+
+        doLogin()
+        observe()
 
 
     }
 
     private fun observe(){
+
         mViewModel.login.observe(this, Observer {
 
-            var menssage = getString(R.string.login_problem)
+           val menssage = if (it.success()) {
 
-            if (it.success()) {
-                menssage = get.String(R.string.login_successful)
-//                showBasicDialog(null, menssage)
+                getString(R.string.login_successful)
             } else {
-                menssage = it.failure()
-//                showBasicDialog(null, menssage)
+                it.failure()
             }
              Toast.makeText(applicationContext, menssage, Toast.LENGTH_SHORT).show()
         })
+
+
     }
 
 
 
 
     private fun doLogin() {
+
         val type = "password"
         val email = "samuelottoni13@gmail.com"
         val password = "samuel@13"

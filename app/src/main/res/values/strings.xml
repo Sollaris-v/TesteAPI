@@ -14,29 +14,26 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="user_status">Usuário Ativo </string>
+    <string name="user_status">Usuário Ativo: </string>
     <string name="user_email">E-mail </string>
     <string name="user_occupation">Função </string>
-        <string name="tech_n1">Técnico N1 </string>
-        <string name="tech_n2">Técnico N2 </string>
-        <string name="supervisor">Supervisor </string>
-        <string name="manager">Gerente </string>
     <string name="user_full_name">Nome Completo </string>
     <string name="user_display_name">Nome de Exibição </string>
     <string name="user_password">Senha </string>
     <string name="user_cell_phone">Telefone Celular </string>
     <string name="user_comm_phone">Telefone Comercial </string>
     <string name="user_cancel">Cancelar </string>
-    <string name="user_save">Salvar </string>
-    <string name="user_delete">Excluir </string>
+    <string name="user_save">SALVAR</string>
+    <string name="user_delete">EXCLUIR</string>
     <string name="user_search">Pesquisar </string>
     <string name="register_user">Cadastrar Usuário </string>
-    <string name="about_app">Sobre o APP </string>
 
 
     <string name="ERROR_UNEXPECTED">Um erro inesperado aconteceu.</string>
     <string name="login_successful">Logado com sucesso!</string>
     <string name="login_problem">Problema ao logar.</string>
 
-    
+    <string name="search_help">Buscar usuário por ID...</string>
+
+
 </resources>

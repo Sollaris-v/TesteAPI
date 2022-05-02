@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="user_occupations">
+        <item>Técnico N1 </item>
+        <item>Técnico N2 </item>
+        <item>Supervisor </item>
+        <item>Gerente </item>
+    </string-array>
+
+</resources>
